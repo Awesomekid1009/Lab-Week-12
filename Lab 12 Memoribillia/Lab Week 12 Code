@@ -1,1 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define max 200
 
+int main()
+{
+    int i,j,k=1;
+    while(k==1)
+  {
+      printf("1.add memory\n");
+      printf("2.see the last result\n");
+      printf("3.Exit\n");
+      scanf("%d",&i);
+      char *st;
+    st=(char*)malloc(max);
+    char str[max];
+      if (i==1)
+      {
+
+    fgets(str, max, stdin);
+    strcpy(st,str);
+do
+{
+ fgets(str, max, stdin);
+ st=(char*)realloc(st,sizeof(str)*2);
+
+ strcat(st,str);
+
+}
+while(strcmp(str,"\n"));
+printf("%s",st);
+      }
+      else {
+    printf("%s",st);
+    free(st);
+
+}
+
+}
+}
